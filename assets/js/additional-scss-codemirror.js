@@ -5,6 +5,21 @@ document.addEventListener('DOMContentLoaded', function() {
             lineNumbers: true,
             mode: 'text/x-scss',
             theme: 'default',
+            tabSize: 2,
+            lineWrapping: true,
+            lint: true,
+            gutters: ["CodeMirror-lint-markers"],
+            extraKeys: {
+                "Ctrl-Space": "autocomplete",
+                "Enter": "newlineAndIndentContinueMarkdownList"
+            },
+            autoCloseBrackets: true,
+            matchBrackets: true,
+        });
+
+        // Run auto completion
+        editor.on("inputRead", function (cm, change) {
+            CodeMirror.commands.autocomplete(cm);
         });
     }
 });
