@@ -2,11 +2,16 @@
 /**
  * Plugin Name: Additional SCSS
  * Description: Custom plugin for SCSS
- * Version: 0.01
+ * Version: 0.1
  */
 
 if (!defined('ABSPATH')) {
     exit;
+}
+
+// Define plugin path constant
+if (!defined('PLUGIN_PATH')) {
+    define('PLUGIN_PATH', plugin_dir_url(__FILE__));
 }
 
 require_once plugin_dir_path(__FILE__) . 'includes/scssphp/scss.inc.php';
